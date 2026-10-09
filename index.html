@@ -3,12 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#17203a">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icon-192.png">
-<link rel="apple-touch-icon" href="icon-192.png">
 <title>لعبة المسابقة</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Tajawal:wght@400;500;700&display=swap">
 <style>
@@ -27,7 +21,7 @@ h1{font-family:'Reem Kufi',Tahoma,sans-serif;font-size:2rem;margin:8px 0 2px}
 .chip:focus-visible,button:focus-visible{outline:3px solid #2f6fed;outline-offset:2px}
 .card{background:var(--card);border:1px solid var(--line);border-inline-start:8px solid var(--c,var(--line));border-radius:14px;padding:22px 20px;margin:14px 0;min-height:230px}
 .tag{font-weight:700;color:var(--c,var(--mute))}
-.q{font-family:'Reem Kufi',Tahoma,sans-serif;font-size:1.65rem;line-height:1.55;margin:10px 0}
+.q{font-family:Tajawal,Tahoma,sans-serif;font-weight:700;font-size:1.75rem;line-height:1.7;margin:10px 0}
 .a{margin-top:14px;padding:12px 14px;border-radius:10px;background:var(--bg);font-size:1.4rem;font-weight:700}
 .row{display:flex;gap:10px;flex-wrap:wrap}
 button.main{flex:1;min-width:140px;border:0;border-radius:12px;padding:14px;font:700 1.05rem Tajawal,Tahoma,sans-serif;background:var(--btn);color:var(--btnt);cursor:pointer}
@@ -61,7 +55,7 @@ select{font:inherit;background:var(--card);color:var(--ink);border:1.5px solid v
 <body>
 <main>
 <h1>لعبة المسابقة</h1>
-<p class="sub">المقدّم يسأل والبقية يجيبون. لا سؤال يتكرر. الجواب ظاهر تحت السؤال، ثم اختر من أجاب صح.</p>
+<p class="sub">المقدّم يسأل والبقية يجيبون. لا يتكرر سؤال حتى بعد إغلاق اللعبة وفتحها من جديد. الجواب ظاهر تحت السؤال، ثم اختر من أجاب صح.</p>
 <div class="chips" id="chips"></div>
 <section class="card" id="card" aria-live="polite">
   <div class="tag" id="tag">جاهز؟</div>
@@ -229,10 +223,107 @@ var Q=[
 [3,"من المعمارية العراقية الحائزة جائزة بريتزكر؟","زها حديد"],
 [3,"ما اسم فن الزخرفة النباتية والهندسية المتكررة في العمارة الإسلامية؟","الأرابيسك"],
 [3,"ما اسم الآلة الإيقاعية الجلدية الشرقية التي تُعرف بـ«الدربكة»؟","الطبلة"]
+,[0,"من اللاعب الملقّب بـ«الفرعون المصري»؟","محمد صلاح"],
+[0,"أي منتخب فاز بكأس أمم أوروبا 2024؟","إسبانيا"],
+[0,"أي نادٍ يلعب على ملعب «أنفيلد»؟","ليفربول"],
+[0,"أي نادٍ يلعب على ملعب «أولد ترافورد»؟","مانشستر يونايتد"],
+[0,"أي نادٍ إيطالي يُلقّب بـ«الروسونيري»؟","ميلان"],
+[0,"ما اسم الدوري الإسباني الممتاز؟","لا ليغا"],
+[0,"كم شوطًا يحتاج الفوز في الكرة الطائرة بنظام أفضل من خمسة أشواط؟","3 أشواط"],
+[0,"ما الرياضة التقليدية اليابانية المعروفة باسم «السومو»؟","المصارعة"],
+[0,"من لاعب التنس السويسري صاحب 20 لقبًا في الغراند سلام؟","روجر فيدرر"],
+[0,"من حارس إيطاليا الأسطوري الفائز بمونديال 2006؟","جانلويجي بوفون"],
+[0,"أي منتخب أفريقي يُلقّب بـ«الأسود غير المروّضة»؟","الكاميرون"],
+[0,"أي منتخب يُلقّب بـ«أسود الأطلس»؟","المغرب"],
+[0,"بأي لقب يُعرف المنتخب العراقي؟","أسود الرافدين"],
+[0,"في أي بطولة جولف يرتدي الفائز السترة الخضراء؟","الماسترز (أوغوستا)"],
+[0,"أي منتخب آسيوي يُلقّب بـ«الساموراي الأزرق»؟","اليابان"],
+[1,"ما عاصمة تونس؟","تونس"],
+[1,"ما عاصمة الأردن؟","عمّان"],
+[1,"ما عاصمة سلطنة عُمان؟","مسقط"],
+[1,"ما عاصمة اليمن؟","صنعاء"],
+[1,"ما عاصمة السودان؟","الخرطوم"],
+[1,"ما عاصمة الإمارات؟","أبوظبي"],
+[1,"ما عاصمة قطر؟","الدوحة"],
+[1,"ما عاصمة ألمانيا؟","برلين"],
+[1,"ما عاصمة كوريا الجنوبية؟","سول"],
+[1,"ما عاصمة الصين؟","بكين"],
+[1,"ما عاصمة روسيا؟","موسكو"],
+[1,"ما أكبر محافظة عراقية مساحةً؟","الأنبار"],
+[1,"ما اسم البحيرة العراقية الواقعة بين كربلاء والأنبار؟","بحيرة الرزازة"],
+[1,"ما اسم النهر الناتج عن التقاء دجلة والفرات في القرنة؟","شط العرب"],
+[1,"ما عاصمة الكويت؟","مدينة الكويت"],
+[2,"من صاحب «ديوان الحماسة»؟","أبو تمام"],
+[2,"من كاتب «العبرات» و«النظرات»؟","مصطفى لطفي المنفلوطي"],
+[2,"من صاحب الرباعيات الشهيرة؟","عمر الخيام"],
+[2,"من كاتب «الأجنحة المتكسرة»؟","جبران خليل جبران"],
+[2,"من كاتب رواية «فرانكشتاين في بغداد»؟","أحمد سعداوي"],
+[2,"من كاتب رواية «قنديل أم هاشم»؟","يحيى حقي"],
+[2,"من الشاعر الملقّب بـ«شاعر القطرين»؟","خليل مطران"],
+[2,"من الشاعر اللبناني الملقّب بـ«الأخطل الصغير»؟","بشارة الخوري"],
+[2,"من صاحب معجم «العين»؟","الخليل بن أحمد الفراهيدي"],
+[2,"من كاتب رواية «أوليفر تويست»؟","تشارلز ديكنز"],
+[2,"من كاتبة «كبرياء وهوى»؟","جين أوستن"],
+[2,"من كاتب «الجريمة والعقاب»؟","فيودور دوستويفسكي"],
+[2,"من شاعر «الكوميديا الإلهية»؟","دانتي أليغييري"],
+[2,"من كاتب رواية «موبي ديك»؟","هيرمان ملفيل"],
+[2,"من كاتب «المسخ»؟","فرانتس كافكا"],
+[3,"من رسم «الحرس الليلي»؟","رامبرانت"],
+[3,"من فنان البوب الأمريكي صاحب لوحة علب حساء كامبل؟","آندي وارهول"],
+[3,"من ألّف باليه «بحيرة البجع»؟","تشايكوفسكي"],
+[3,"من ألّف «الدانوب الأزرق»؟","يوهان شتراوس الابن"],
+[3,"من ألّف مقطوعة «بوليرو»؟","موريس رافيل"],
+[3,"من الفنان العراقي الملقّب بـ«قيصر الأغنية العربية»؟","كاظم الساهر"],
+[3,"من رسام الكاريكاتير الفلسطيني مبتكر شخصية «حنظلة»؟","ناجي العلي"],
+[3,"أي مهندس معماري صمّم برج خليفة (شركة SOM)؟","أدريان سميث"],
+[3,"ما اسم الفن الياباني لتنسيق الزهور؟","الإيكيبانا"],
+[3,"ما اسم الآلة العربية ذات الوتر الواحد التي تُعزف بالقوس؟","الربابة"],
+[3,"ما الآلة الوترية التي تُعزف بالضرب بمطرقتين صغيرتين؟","السنطور"],
+[3,"ما الآلة النفخية المصنوعة من القصب في الموسيقى الشرقية؟","الناي"],
+[3,"ما اسم فن الرسوم الصغيرة لتزيين المخطوطات في التراث الإسلامي؟","المنمنمات"],
+[3,"من الفنانة المكسيكية الشهيرة بلوحات الذات؟","فريدا كاهلو"],
+[3,"من ألّف «سيمفونية العالم الجديد»؟","دفوراك"],
+[4,"من آخر الخلفاء الراشدين؟","علي بن أبي طالب"],
+[4,"ما المعركة التي هزم فيها المماليك المغول عام 1260؟","عين جالوت"],
+[4,"من القائد المسلم الذي انتصر في معركة اليرموك؟","خالد بن الوليد"],
+[4,"في أي عام ميلادي وُلد النبي ﷺ تقريبًا (عام الفيل)؟","570م"],
+[4,"في أي عام هجري وقعت معركة بدر؟","2 هـ"],
+[4,"إلى أي جزيرة نُفي نابليون في النهاية؟","سانت هيلانة"],
+[4,"في أي عام أصبح هتلر مستشارًا لألمانيا؟","1933"],
+[4,"من رئيس وزراء بريطانيا في معظم الحرب العالمية الثانية؟","ونستون تشرشل"],
+[4,"في أي عام هبط الإنسان على القمر لأول مرة؟","1969"],
+[4,"من أول إنسان سافر إلى الفضاء؟","يوري غاغارين"],
+[4,"من مؤسس الأسرة العلوية الحاكمة في مصر؟","محمد علي باشا"],
+[4,"أي شعب ابتكر الأبجدية الفينيقية؟","الفينيقيون"],
+[4,"في أي عام اندلعت ثورة العشرين في العراق؟","1920"],
+[4,"في أي عام تأسست المملكة العراقية؟","1921"],
+[4,"في أي عام تأسست الأمم المتحدة؟","1945"],
+[5,"من أول ممثل جسّد جيمس بوند في سلسلة الأفلام الرسمية؟","شون كونري"],
+[5,"من الممثل الذي جسّد «الجوكر» في «الفارس الأسود» ونال أوسكارًا بعد وفاته؟","هيث ليدجر"],
+[5,"من بطل فيلم «فورست غامب»؟","توم هانكس"],
+[5,"من الممثلة التي جسّدت روز في «تيتانيك»؟","كيت وينسلت"],
+[5,"من مخرج فيلم «الرسالة» (1976)؟","مصطفى العقاد"],
+[5,"من الممثل الذي جسّد حمزة في فيلم «الرسالة»؟","أنتوني كوين"],
+[5,"أي استوديو أنتج «قصة لعبة» (Toy Story)؟","بيكسار"],
+[5,"من المخرج الياباني صاحب «المخطوفة» (Spirited Away)؟","هاياو ميازاكي"],
+[5,"من أخرج فيلم «كازابلانكا»؟","مايكل كيرتز"],
+[5,"من بطل فيلم «ماتريكس»؟","كيانو ريفز"],
+[5,"من أخرج فيلم «لورانس العرب»؟","ديفيد لين"],
+[5,"من الممثل المصري الذي جسّد عبد الناصر في «ناصر 56»؟","أحمد زكي"],
+[5,"من أخرج الفيلم المصري «الأرض» (1969)؟","يوسف شاهين"],
+[5,"من الممثل الذي جسّد «آيرون مان»؟","روبرت داوني جونيور"],
+[5,"من أخرجت فيلم «باربي» (2023)؟","غريتا غيرويغ"]
 ];
-var filter=-1,used={},cur=-1,shownA=false;
+var filter=-1,used={},cur=-1,KEY="quizUsedV1";
+function hs(t){var h=5381;for(var i=0;i<t.length;i++)h=((h<<5)+h+t.charCodeAt(i))|0;return h.toString(36)}
+var K=Q.map(function(x){return hs(x[1])});
+function load(){try{var a=JSON.parse(localStorage.getItem(KEY)||"[]");K.forEach(function(k,i){if(a.indexOf(k)>-1)used[i]=true})}catch(e){}}
+function save(){try{var a=[];for(var i=0;i<Q.length;i++)if(used[i])a.push(K[i]);localStorage.setItem(KEY,JSON.stringify(a))}catch(e){}}
+var order=Q.map(function(_,i){return i});
+for(var i=order.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=order[i];order[i]=order[j];order[j]=t}
+load();
 var $=function(i){return document.getElementById(i)};
-function pool(){var p=[];for(var i=0;i<Q.length;i++){if(!used[i]&&(filter<0||Q[i][0]===filter))p.push(i)}return p}
+function pool(){var p=[];for(var i=0;i<order.length;i++){var q=order[i];if(!used[q]&&(filter<0||Q[q][0]===filter))p.push(q)}return p}
 function paint(c){$("card").style.setProperty("--c",c)}
 function counter(){$("left").textContent="المتبقي: "+pool().length+" سؤال"}
 var players=[],awarded=false;
@@ -240,13 +331,13 @@ function nextQ(){
   awarded=false;$("award").classList.add("hide");$("note").textContent="";
   var p=pool();
   if(!p.length){cur=-1;$("tag").textContent="انتهت الأسئلة";paint("");$("q").textContent="لا توجد أسئلة جديدة في هذا التصنيف. اضغط «إعادة الأسئلة» أو غيّر التصنيف.";$("a").classList.add("hide");counter();return}
-  cur=p[Math.floor(Math.random()*p.length)];used[cur]=true;
+  cur=p[0];used[cur]=true;save();
   var x=Q[cur];$("tag").textContent=C[x[0]];paint(COL[x[0]]);$("q").textContent=x[1];$("a").textContent=x[2];
   $("a").classList.remove("hide");$("next").textContent="السؤال التالي";counter();
   if(players.length)$("award").classList.remove("hide");
 }
 $("next").onclick=nextQ;
-$("reset").onclick=function(){used={};cur=-1;awarded=false;$("award").classList.add("hide");$("note").textContent="";$("tag").textContent="جاهز؟";paint("");$("q").textContent="تمت إعادة كل الأسئلة. اضغط «سؤال جديد».";$("a").classList.add("hide");$("next").textContent="سؤال جديد";counter()};
+$("reset").onclick=function(){used={};save();cur=-1;awarded=false;$("award").classList.add("hide");$("note").textContent="";$("tag").textContent="جاهز؟";paint("");$("q").textContent="تمت إعادة كل الأسئلة. اضغط «سؤال جديد».";$("a").classList.add("hide");$("next").textContent="سؤال جديد";counter()};
 (function(){
   var names=["الكل"].concat(C),h="";
   names.forEach(function(n,i){h+='<button class="chip" aria-pressed="'+(i===0)+'" data-i="'+(i-1)+'"'+(i>0?' style="--c:'+COL[i-1]+'"':'')+'>'+n+'</button>'});
@@ -272,7 +363,6 @@ function esc(t){return t.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"
   renderP();
   counter();
 })();
-if('serviceWorker' in navigator)window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});
 </script>
 </body>
 </html>
